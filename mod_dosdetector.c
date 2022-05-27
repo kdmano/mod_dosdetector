@@ -282,7 +282,7 @@ static int dosdetector_handler(request_rec *r)
 	}
 	if (address == NULL) {
 #if (AP_SERVER_MINORVERSION_NUMBER > 2)
-		address = r->connection->client_ip;
+		address = r->useragent_ip;
 #else
 		address = r->connection->remote_ip;
 #endif
